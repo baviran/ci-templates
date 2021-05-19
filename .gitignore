@@ -1,0 +1,24 @@
+# Dependency
+node_modules
+
+# IDE
+**/.idea
+
+## Logs
+logs
+*.log
+server/loggersConfig.json
+var/log/archived
+
+#Configs
+.npmrc
+**/.npmrc
+
+# Packaging
+**/dist/
+build/package/maven/target
+local-mothership/artifactory
+
+#MacOS specific files
+**/__MACOSX/
+**/.DS_Store
