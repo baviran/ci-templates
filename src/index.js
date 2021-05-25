@@ -5,19 +5,6 @@ const readdir = util.promisify(fs.readdir);
 const readFile = util.promisify(fs.readFile);
 const TEMPLATES_PATH = __dirname + "/templates"
 
-let TEMPLATES = {
-    jenkins: {
-        maven: [
-            {
-                'template1.yaml': 'skjdfhkshfkshdf skjdfhksdj fhk h '
-            }
-        ],
-        npm: [
-            {}
-        ]
-    }
-};
-
 const getTemplateObject = async ({ templateName, pathToFile }) => {
     const fileContent = await readFile(pathToFile, { encoding: 'utf8' });
     return {
