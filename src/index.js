@@ -7,8 +7,14 @@ const TEMPLATES_PATH = __dirname + "/templates"
 
 const getTemplateObject = async ({ templateName, pathToTemplateFolder }) => {
     if(fs.lstatSync(pathToTemplateFolder).isDirectory()) {
+        if(!fs.existsSync(`${pathToTemplateFolder}/template.json`)) {
+            return null;
+        }
         const templateDetails = await readFile(`${pathToTemplateFolder}/template.json`, { encoding: 'utf8' });
         const template = JSON.parse(templateDetails);
+        if(!fs.existsSync(`${pathToTemplateFolder}/${template.filename}`)) {
+            return null;
+        }
         const fileContent = await readFile(`${pathToTemplateFolder}/${template.filename}`, { encoding: 'utf8' });
         return {
             name: template.templateName,
