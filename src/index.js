@@ -5,10 +5,16 @@ const readdir = util.promisify(fs.readdir);
 const readFile = util.promisify(fs.readFile);
 const TEMPLATES_PATH = __dirname + "/templates"
 
-const getTemplateObject = async ({ templateName, pathToFile }) => {
-    const fileContent = await readFile(pathToFile, { encoding: 'utf8' });
-    return {
-        [templateName]: fileContent
+const getTemplateObject = async ({ templateName, pathToTemplateFolder }) => {
+    if(fs.lstatSync(pathToTemplateFolder).isDirectory()) {
+        const templateDetails = await readFile(`${pathToTemplateFolder}/template.json`, { encoding: 'utf8' });
+        const template = JSON.parse(templateDetails);
+        const fileContent = await readFile(`${pathToTemplateFolder}/${template.filename}`, { encoding: 'utf8' });
+        return {
+            name: template.templateName,
+            description: template.description,
+            template: fileContent
+        }
     }
 }
 
@@ -18,8 +24,8 @@ const getPackageTypeTemplates = async ({ packageType, pathToProvider }) => {
     const templates = await readdir(pathToDir)
 
     for (const templateName of templates) {
-        const pathToFile = `${pathToDir}/${templateName}`;
-        packageTypeTemplates.push(await getTemplateObject({ templateName, pathToFile }))
+        const pathToTemplateFolder = `${pathToDir}/${templateName}`;
+        packageTypeTemplates.push(await getTemplateObject({ templateName, pathToTemplateFolder }))
     }
     return packageTypeTemplates
 }
@@ -40,6 +46,7 @@ async function copyFilesAsync() {
     const ciProviders = await readdir(TEMPLATES_PATH);
     let templateObj = {};
     for (const ciProvider of ciProviders) templateObj[ciProvider] = await getProvider(ciProvider)
+    console.log(JSON.stringify(templateObj));
     return templateObj;
 }
 

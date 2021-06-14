@@ -1,0 +1,5 @@
+{
+  "templateName": "Server Template",
+  "description": "Server template for creating server CI",
+  "filename": "template2.yaml"
+}
