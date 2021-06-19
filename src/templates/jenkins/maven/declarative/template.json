@@ -1,0 +1,5 @@
+{
+  "templateName": "Maven declarative",
+  "description": "Build a Maven project using declarative syntax",
+  "filename": "Jenkinsfile"
+}
