@@ -1,0 +1,5 @@
+{
+  "templateName": "Maven",
+  "description": "Build a Maven project",
+  "filename": ".gitlab-ci.yml"
+}

@@ -1,0 +1,5 @@
+{
+  "templateName": "Gradle",
+  "description": "Build a Gradle project",
+  "filename": ".gitlab-ci.yml"
+}
