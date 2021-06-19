@@ -1,5 +1,5 @@
 {
   "templateName": "Maven",
   "description": "Build a java project with Maven",
-  "filename": ".gitlab-ci.yml"
+  "filename": "azure-pipelines.yml"
 }

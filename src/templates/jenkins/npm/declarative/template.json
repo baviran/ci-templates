@@ -1,5 +1,5 @@
 {
   "templateName": "Npm declarative",
-  "description": "Build an npm project using declarative syntax",
+  "description": "Build a node / javascript project with npm using declarative syntax",
   "filename": "Jenkinsfile"
 }

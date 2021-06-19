@@ -1,5 +1,5 @@
 {
   "templateName": "Gradle scripted",
-  "description": "Build a Gradle project using scripted syntax",
+  "description": "Build a java project with Gradle using scripted syntax",
   "filename": "Jenkinsfile"
 }

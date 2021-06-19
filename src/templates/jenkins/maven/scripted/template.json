@@ -1,5 +1,5 @@
 {
   "templateName": "Maven scripted",
-  "description": "Build a Maven project using scripted syntax",
+  "description": "Build a java project with Maven using scripted syntax",
   "filename": "Jenkinsfile"
 }
