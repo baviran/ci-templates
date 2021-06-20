@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Clone') {
             steps {
-                git branch: 'master', url: '<git url>'
+                git branch: 'master', url: '<GIT_URL>'
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
                 rtNugetResolver (
                     id: "NUGET_RESOLVER",
                     serverId: "JFROG_INSTANCE",
-                    repo: "<artifactory repository>"
+                    repo: "<ARTIFACTORY_REPOSITORY>"
                 )
             }
         }

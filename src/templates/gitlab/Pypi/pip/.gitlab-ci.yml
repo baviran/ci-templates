@@ -2,9 +2,9 @@ image: releases-docker.jfrog.io/jfrog/jfrog-cli-full:latest
 
 before_script:
   # Configure Artifactory instance
-  - jfrog config add rt --artifactory-url <artifactory url> --user $JFROG_USERNAME --password $JFROG_PASSWORD --interactive=false
+  - jfrog config add rt --artifactory-url <ARTIFACTORY_URL> --user $JFROG_USERNAME --password $JFROG_PASSWORD --interactive=false
   # Configure Artifactory repository
-  - jfrog rt pipc --server-id-resolve rt --repo-resolve <artifactory repository>
+  - jfrog rt pipc --server-id-resolve rt --repo-resolve <ARTIFACTORY_REPOSITORY>
 
 variables:
   RT_BUILD_NAME: "BUILD-A"
@@ -16,7 +16,7 @@ build:
     # Package the project, create distribution archives (tar.gz and whl)
     - python setup.py sdist bdist_wheel
     # Upload the packages to the pypi repository in Artifactory:
-    - jfrog rt u dist/ <artifactory repository>/ --build-name $RT_BUILD_NAME --build-number $CI_JOB_ID
+    - jfrog rt u dist/ <ARTIFACTORY_REPOSITORY>/ --build-name $RT_BUILD_NAME --build-number $CI_JOB_ID
     # Add the environment variables to the build-info
     - jfrog rt bce $RT_BUILD_NAME $CI_JOB_ID
     # Add the git details to the build-info

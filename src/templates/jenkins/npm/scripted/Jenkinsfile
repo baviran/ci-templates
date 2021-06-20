@@ -4,12 +4,12 @@ node {
     def buildInfo
 
     stage ('Clone') {
-        git url: '<git url>'
+        git url: '<GIT_URL>'
     }
 
     stage ('Artifactory configuration') {
-        rtNpm.deployer repo: '<artifactory repository>', server: server
-        rtNpm.resolver repo: '<artifactory repository>', server: server
+        rtNpm.deployer repo: '<ARTIFACTORY_REPOSITORY>', server: server
+        rtNpm.resolver repo: '<ARTIFACTORY_REPOSITORY>', server: server
         // Tool name from Jenkins configuration
         rtNpm.tool = 'NPM_TOOL'
         buildInfo = Artifactory.newBuildInfo()

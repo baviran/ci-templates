@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Clone') {
             steps {
-                git branch: 'master', url: '<git url>'
+                git branch: 'master', url: '<GIT_URL>'
             }
         }
 
@@ -13,13 +13,13 @@ pipeline {
                 rtGoResolver (
                     id: "GO_RESOLVER",
                     serverId: "JFROG_INSTANCE",
-                    repo: "<artifactory repository>"
+                    repo: "<ARTIFACTORY_REPOSITORY>"
                 )
 
                 rtGoDeployer (
                     id: "GO_DEPLOYER",
                     serverId: "JFROG_INSTANCE",
-                    repo: "<artifactory repository>"
+                    repo: "<ARTIFACTORY_REPOSITORY>"
                 )
             }
         }

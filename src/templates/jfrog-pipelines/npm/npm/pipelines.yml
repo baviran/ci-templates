@@ -27,7 +27,7 @@ pipelines:
       - name: Build
         type: NpmBuild
         configuration:
-          resolverRepo: <artifactory repository>
+          resolverRepo: <ARTIFACTORY_REPOSITORY>
           environmentVariables:
             JFROG_BUILD_STATUS: PASS
           integrations:
@@ -43,7 +43,7 @@ pipelines:
       - name: Build
         type: NpmBuild
         configuration:
-          resolverRepo: <artifactory repository>
+          resolverRepo: <ARTIFACTORY_REPOSITORY>
           environmentVariables:
             JFROG_BUILD_STATUS: PASS
           integrations:

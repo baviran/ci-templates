@@ -14,7 +14,7 @@ jobs:
       - name: Run JFrog CLI
         run: |
           # Configure Artifactory repositories
-          jfrog rt nugetc --server-id-resolve JFROG_INSTANCE --repo-resolve <artifactory repository>
+          jfrog rt nugetc --server-id-resolve JFROG_INSTANCE --repo-resolve <ARTIFACTORY_REPOSITORY>
           # Run 'nuget restore'
           jfrog rt nuget restore
           # Collect environment variables and them to the build-info

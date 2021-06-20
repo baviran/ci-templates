@@ -12,7 +12,7 @@ steps:
     inputs:
       command: 'build'
       artifactoryService: 'JFROG_INSTANCE'
-      resolutionRepo: '<artifactory repository>'
+      resolutionRepo: '<ARTIFACTORY_REPOSITORY>'
       collectBuildInfo: true
       buildName: '$(Build.DefinitionName)'
       buildNumber: '$(Build.BuildNumber)'

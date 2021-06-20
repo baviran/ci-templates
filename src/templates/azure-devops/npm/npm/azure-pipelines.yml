@@ -9,7 +9,7 @@ steps:
     inputs:
       command: 'install'
       artifactoryService: 'JFROG_INSTANCE'
-      sourceRepo: '<artifactory repository>'
+      sourceRepo: '<ARTIFACTORY_REPOSITORY>'
       # workingFolder: ''
       arguments: 'install'
       collectBuildInfo: true

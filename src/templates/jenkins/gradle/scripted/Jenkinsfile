@@ -4,7 +4,7 @@ node {
     def buildInfo = Artifactory.newBuildInfo()
 
     stage ('Clone') {
-        git url: '<git url>'
+        git url: '<GIT_URL>'
     }
 
     stage ('Artifactory configuration') {
@@ -13,8 +13,8 @@ node {
 
         // Tool name from Jenkins configuration
         rtGradle.tool = 'GRADLE_TOOL'
-        rtGradle.deployer repo: '<artifactory repository>', server: server
-        rtGradle.resolver repo: '<artifactory repository>', server: server
+        rtGradle.deployer repo: '<ARTIFACTORY_REPOSITORY>', server: server
+        rtGradle.resolver repo: '<ARTIFACTORY_REPOSITORY>', server: server
     }
 
     stage ('Exec Gradle') {

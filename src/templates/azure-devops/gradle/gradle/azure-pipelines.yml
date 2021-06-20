@@ -11,9 +11,9 @@ steps:
       tasks: 'artifactoryPublish'
       useWrapper: true
       artifactoryResolverService: 'JFROG_INSTANCE'
-      sourceRepo: '<artifactory repository>'
+      sourceRepo: '<ARTIFACTORY_REPOSITORY>'
       artifactoryDeployerService: 'JFROG_INSTANCE'
-      targetRepo: '<artifactory repository>'
+      targetRepo: '<ARTIFACTORY_REPOSITORY>'
       deployIvyDesc: false
       collectBuildInfo: true
       buildName: '$(Build.DefinitionName)'

@@ -4,11 +4,11 @@ node {
     def buildInfo
 
     stage ('Clone') {
-        git url: '<git url>'
+        git url: '<GIT_URL>'
     }
 
     stage ('Artifactory configuration') {
-        rtDotnet.resolver repo: '<artifactory repository>', server: server
+        rtDotnet.resolver repo: '<ARTIFACTORY_REPOSITORY>', server: server
         buildInfo = Artifactory.newBuildInfo()
     }
 

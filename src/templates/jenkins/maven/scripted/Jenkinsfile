@@ -4,7 +4,7 @@ node {
     def buildInfo
 
     stage ('Clone') {
-        git url: '<git url>'
+        git url: '<GIT_URL>'
     }
 
     stage ('Artifactory configuration') {
@@ -13,8 +13,8 @@ node {
 
         // Tool name from Jenkins configuration
         rtMaven.tool = 'MAVEN_TOOL'
-        rtMaven.deployer releaseRepo: '<artifactory repository>', snapshotRepo: '<artifactory repository>', server: server
-        rtMaven.resolver releaseRepo: '<artifactory repository>', snapshotRepo: '<artifactory repository>', server: server
+        rtMaven.deployer releaseRepo: '<ARTIFACTORY_REPOSITORY>', snapshotRepo: '<ARTIFACTORY_REPOSITORY>', server: server
+        rtMaven.resolver releaseRepo: '<ARTIFACTORY_REPOSITORY>', snapshotRepo: '<ARTIFACTORY_REPOSITORY>', server: server
         buildInfo = Artifactory.newBuildInfo()
     }
 

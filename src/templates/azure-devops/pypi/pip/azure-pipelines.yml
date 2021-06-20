@@ -9,7 +9,7 @@ steps:
     inputs:
       artifactoryService: 'JFROG_INSTANCE'
       command: 'install'
-      targetResolveRepo: '<artifactory repository>'
+      targetResolveRepo: '<ARTIFACTORY_REPOSITORY>'
       collectBuildInfo: true
       buildName: '$(Build.DefinitionName)'
       buildNumber: '$(Build.BuildNumber)'

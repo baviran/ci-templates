@@ -2,9 +2,9 @@ image: releases-docker.jfrog.io/jfrog/jfrog-cli-full:latest
 
 before_script:
   # Configure Artifactory instance
-  - jfrog config add rt --artifactory-url <artifactory url> --user $JFROG_USERNAME --password $JFROG_PASSWORD --interactive=false
+  - jfrog config add rt --artifactory-url <ARTIFACTORY_URL> --user $JFROG_USERNAME --password $JFROG_PASSWORD --interactive=false
   # Configure Artifactory repository
-  - jfrog rt mvnc --server-id-deploy rt --repo-deploy-releases <artifactory repository> --repo-deploy-snapshots <artifactory repository> --server-id-resolve rt --repo-resolve-releases <artifactory repository> --repo-resolve-snapshots <artifactory repository>
+  - jfrog rt mvnc --server-id-deploy rt --repo-deploy-releases <ARTIFACTORY_REPOSITORY> --repo-deploy-snapshots <ARTIFACTORY_REPOSITORY> --server-id-resolve rt --repo-resolve-releases <ARTIFACTORY_REPOSITORY> --repo-resolve-snapshots <ARTIFACTORY_REPOSITORY>
 
 variables:
   RT_BUILD_NAME: "BUILD-A"

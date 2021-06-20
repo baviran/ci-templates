@@ -28,8 +28,8 @@ pipelines:
         type: GradleBuild
         configuration:
           gradleCommand: artifactoryPublish
-          resolverRepo: <artifactory repository>
-          deployerRepo: <artifactory repository>
+          resolverRepo: <ARTIFACTORY_REPOSITORY>
+          deployerRepo: <ARTIFACTORY_REPOSITORY>
           useWrapper: "true"
           environmentVariables:
             JFROG_BUILD_STATUS: PASS

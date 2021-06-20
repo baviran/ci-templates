@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Clone') {
             steps {
-                git branch: 'master', url: "<git url>"
+                git branch: 'master', url: "<GIT_URL>"
             }
         }
 
@@ -13,15 +13,15 @@ pipeline {
                 rtMavenDeployer (
                     id: "MAVEN_DEPLOYER",
                     serverId: "JFROG_INSTANCE",
-                    releaseRepo: "<artifactory repository>",
-                    snapshotRepo: "<artifactory repository>"
+                    releaseRepo: "<ARTIFACTORY_REPOSITORY>",
+                    snapshotRepo: "<ARTIFACTORY_REPOSITORY>"
                 )
 
                 rtMavenResolver (
                     id: "MAVEN_RESOLVER",
                     serverId: "JFROG_INSTANCE",
-                    releaseRepo: "<artifactory repository>",
-                    snapshotRepo: "<artifactory repository>"
+                    releaseRepo: "<ARTIFACTORY_REPOSITORY>",
+                    snapshotRepo: "<ARTIFACTORY_REPOSITORY>"
                 )
             }
         }

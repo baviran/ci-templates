@@ -6,11 +6,11 @@ node {
     def virtual_env_activation = "source /Users/myUser/venv-example/bin/activate"
 
     stage ('Clone') {
-        git url: '<git url>'
+        git url: '<GIT_URL>'
     }
 
     stage ('Artifactory configuration') {
-        rtPip.resolver repo: '<artifactory repository>', server: server
+        rtPip.resolver repo: '<ARTIFACTORY_REPOSITORY>', server: server
         buildInfo = Artifactory.newBuildInfo()
     }
 
@@ -30,7 +30,7 @@ node {
             "files": [
                 {
                     "pattern": "dist/",
-                    "target": "'<artifactory repository>'/"
+                    "target": "'<ARTIFACTORY_REPOSITORY>'/"
                 }
             ]
         }"""

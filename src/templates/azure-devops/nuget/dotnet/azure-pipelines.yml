@@ -9,7 +9,7 @@ steps:
     inputs:
       command: 'restore'
       artifactoryService: 'JFROG_INSTANCE'
-      targetResolveRepo: '<artifactory repository>'
+      targetResolveRepo: '<ARTIFACTORY_REPOSITORY>'
       rootPath: '**/*.sln'
       collectBuildInfo: true
       buildName: '$(Build.DefinitionName)'

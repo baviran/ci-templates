@@ -28,10 +28,10 @@ pipelines:
         type: MvnBuild
         configuration:
           mvnCommand: install
-          resolverSnapshotRepo: <artifactory repository>
-          resolverReleaseRepo: <artifactory repository>
-          deployerSnapshotRepo: <artifactory repository>
-          deployerReleaseRepo: <artifactory repository>
+          resolverSnapshotRepo: <ARTIFACTORY_REPOSITORY>
+          resolverReleaseRepo: <ARTIFACTORY_REPOSITORY>
+          deployerSnapshotRepo: <ARTIFACTORY_REPOSITORY>
+          deployerReleaseRepo: <ARTIFACTORY_REPOSITORY>
 
           environmentVariables:
             JFROG_BUILD_STATUS: PASS

@@ -27,7 +27,7 @@ pipelines:
       - name: Build
         type: GoBuild
         configuration:
-          resolverRepo: <artifactory repository>
+          resolverRepo: <ARTIFACTORY_REPOSITORY>
           goCommand: build
           environmentVariables:
             JFROG_BUILD_STATUS: PASS
