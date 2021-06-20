@@ -1,6 +1,6 @@
 {
-  "name": "ci-templates-test",
-  "version": "1.0.22",
+  "name": "jfrog-ci-templates",
+  "version": "1.0.23",
   "description": "",
   "main": "index.js",
   "scripts": {

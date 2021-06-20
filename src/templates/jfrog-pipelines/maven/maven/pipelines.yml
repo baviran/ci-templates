@@ -2,8 +2,8 @@ resources:
   - name: git-resource
     type: GitRepo
     configuration:
-      path: <git org>/<git repo>
-      gitProvider: <jfrog pipelines git integration>
+      path: <GIT_ORG_AND_REPO>
+      gitProvider: <<JFROG_PIPELINES_GIT_INTEGRATION>>
       buildOn:
         pullRequestCreate: true
       branches:
@@ -11,7 +11,7 @@ resources:
   - name: build-info-resource
     type: BuildInfo
     configuration:
-      sourceArtifactory: <jfrog pipelines artifactory integration>
+      sourceArtifactory: <JFROG_PIPELINES_ARTIFACTORY_INTEGRATION>
       buildName: BUILD-A
       buildNumber: $run_number
 pipelines:
@@ -36,7 +36,7 @@ pipelines:
           environmentVariables:
             JFROG_BUILD_STATUS: PASS
           integrations:
-            - name: <jfrog pipelines artifactory integration>
+            - name: <JFROG_PIPELINES_ARTIFACTORY_INTEGRATION>
           inputResources:
             - name: git-resource
         execution:
