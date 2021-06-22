@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: <GIT_ORG_AND_REPO>
-      gitProvider: <<JFROG_PIPELINES_GIT_INTEGRATION>>
+      gitProvider: <JFROG_PIPELINES_GIT_INTEGRATION>
       buildOn:
         pullRequestCreate: true
       branches:
