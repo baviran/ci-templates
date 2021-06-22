@@ -15,7 +15,7 @@ resources:
       buildName: BUILD-A
       buildNumber: $run_number
 pipelines:
-  - name: <jfrog pipelines pipeline name>
+  - name: <JFROG_PIPELINES_PIPELINE_NAME>
     configuration:
       environmentVariables:
         readOnly:
@@ -31,23 +31,7 @@ pipelines:
           environmentVariables:
             JFROG_BUILD_STATUS: PASS
           integrations:
-            - name: <JFROG_PIPELINES_ARTIFACTORY_INTEGRATION>
-          inputResources:
-            - name: git-resource
-        execution:
-          onFailure:
-            - export JFROG_BUILD_STATUS=FAIL
-            - jfrog rt bce
-            - jfrog rt bag
-            - jfrog rt bp
-      - name: Build
-        type: NpmBuild
-        configuration:
-          resolverRepo: <ARTIFACTORY_REPOSITORY>
-          environmentVariables:
-            JFROG_BUILD_STATUS: PASS
-          integrations:
-            - name: <<JFROG_PIPELINES_GIT_INTEGRATION>>
+            - name: <JFROG_PIPELINES_GIT_INTEGRATION>
           inputResources:
             - name: git-resource
         execution:
