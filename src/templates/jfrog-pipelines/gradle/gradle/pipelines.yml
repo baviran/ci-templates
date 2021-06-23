@@ -1,5 +1,5 @@
 resources:
-  - name: git-resource
+  - name: <GIT_RESOURCE>
     type: GitRepo
     configuration:
       path: <GIT_ORG_AND_REPO>
@@ -8,14 +8,14 @@ resources:
         pullRequestCreate: true
       branches:
         include: master
-  - name: build-info-resource
+  - name: <BUILD_INFO_RESOURCE>
     type: BuildInfo
     configuration:
       sourceArtifactory: <JFROG_PIPELINES_ARTIFACTORY_INTEGRATION>
       buildName: BUILD-A
       buildNumber: $run_number
 pipelines:
-  - name: Pipeline-1
+  - name: <JFROG_PIPELINE_NAME>
     configuration:
       environmentVariables:
         readOnly:
@@ -36,7 +36,7 @@ pipelines:
           integrations:
             - name: <JFROG_PIPELINES_ARTIFACTORY_INTEGRATION>
           inputResources:
-            - name: git-resource
+            - name: <GIT_RESOURCE>
         execution:
           onFailure:
             - export JFROG_BUILD_STATUS=FAIL
@@ -47,12 +47,12 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputResources:
-            - name: git-resource
+            - name: <GIT_RESOURCE>
           outputResources:
-            - name: build-info-resource
+            - name: <BUILD_INFO_RESOURCE>
           inputSteps:
             - name: Build
           forceXrayScan: true
         execution:
           onComplete:
-            - update_commit_status git-resource
+            - update_commit_status <GIT_RESOURCE>
